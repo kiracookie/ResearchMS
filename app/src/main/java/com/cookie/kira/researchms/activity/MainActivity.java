@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import com.cookie.kira.researchms.R;
 import com.cookie.kira.researchms.adapter.PaperAdapter;
@@ -32,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
         paperTest.setName("2017测试");
         papers.add(paperTest);
 
-        paperAdapter = new PaperAdapter(papers);
+        paperAdapter = new PaperAdapter(papers,
+//                itemTv点击事件
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "click " + ((Paper) view.getTag()).getName(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
         papaerListView = (RecyclerView) findViewById(R.id.paperList);
         papaerListView.setLayoutManager(new LinearLayoutManager(this));
         papaerListView.setAdapter(paperAdapter);
-
 
     }
 }
