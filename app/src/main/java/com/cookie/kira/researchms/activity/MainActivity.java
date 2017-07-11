@@ -26,20 +26,40 @@ public class MainActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_main);
 
         papers = new ArrayList<>();
+
         Paper paperTest = new Paper();
+        paperTest.setId(-1);
+        paperTest.setName("新建调查");
+        papers.add(paperTest);
+
+        // TODO: 2017-07-11 获取paper列表
+
+        paperTest = new Paper();
+        paperTest.setId(1);
         paperTest.setName("2016测试");
         papers.add(paperTest);
 
         paperTest = new Paper();
+        paperTest.setId(2);
         paperTest.setName("2017测试");
         papers.add(paperTest);
+
 
         paperAdapter = new PaperAdapter(papers,
 //                itemTv点击事件
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "click " + ((Paper) view.getTag()).getName(), Toast.LENGTH_SHORT).show();
+
+                        if (((Paper) view.getTag()).getId() == -1) {
+                            Toast.makeText(MainActivity.this, "跳转至新建paperActivity", Toast.LENGTH_SHORT).show();
+                            // TODO: 2017-07-11 跳转至新建页
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "跳转至答案列表页 paperId" + ((Paper) view.getTag()).getId(), Toast.LENGTH_SHORT).show();
+                            // TODO: 2017-07-11  取数 并跳转
+
+                        }
                     }
                 }
         );
