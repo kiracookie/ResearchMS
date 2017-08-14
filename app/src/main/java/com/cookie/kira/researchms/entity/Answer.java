@@ -1,5 +1,6 @@
 package com.cookie.kira.researchms.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -7,10 +8,11 @@ import java.util.Map;
  * Created by 11669 on 2017-07-11.
  */
 
-public class Answer {
+public class Answer implements Serializable {
     private List<AnswerDetail> answerDetails;
     private Map<String, AnswerDetail> answerDetailsMap;
     private String owner;
+    private int paperId;
 
     public List<AnswerDetail> getAnswerDetails() {
         return answerDetails;
@@ -39,5 +41,13 @@ public class Answer {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public int getPaperId() {
+        return paperId;
+    }
+
+    public void setPaperId(int paperId) {
+        this.paperId = paperId;
     }
 }
