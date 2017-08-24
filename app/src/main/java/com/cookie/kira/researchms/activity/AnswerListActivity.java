@@ -72,7 +72,7 @@ public class AnswerListActivity extends AppCompatActivity {
                             AnswerListActivity.this.startActivity(intent);
 
                         } else {
-                            Toast.makeText(AnswerListActivity.this, "跳转至答案页 paperId owner" + ((Answer) view.getTag()).getOwner(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AnswerListActivity.this, "跳转至结果页 paperId owner" + ((Answer) view.getTag()).getOwner(), Toast.LENGTH_SHORT).show();
                             // TODO: 2017-07-11  取数 并跳转
 
                         }

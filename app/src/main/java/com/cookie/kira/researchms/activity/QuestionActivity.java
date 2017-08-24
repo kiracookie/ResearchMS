@@ -37,7 +37,7 @@ public class QuestionActivity extends AppCompatActivity {
                 String owner = et.getText().toString();
                 if (!owner.isEmpty()) {
                     answer.setOwner(owner);
-                    Toast.makeText(QuestionActivity.this, "连接成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuestionActivity.this, answer.getOwner(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                 }
@@ -45,8 +45,6 @@ public class QuestionActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
-        Toast.makeText(QuestionActivity.this, answer.getOwner(), Toast.LENGTH_SHORT).show();
 
 
         super.onCreate(savedInstanceState);
