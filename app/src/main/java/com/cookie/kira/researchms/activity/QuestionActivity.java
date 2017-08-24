@@ -37,7 +37,8 @@ public class QuestionActivity extends AppCompatActivity {
                 String owner = et.getText().toString();
                 if (!owner.isEmpty()) {
                     answer.setOwner(owner);
-                    Toast.makeText(QuestionActivity.this, answer.getOwner(), Toast.LENGTH_SHORT).show();
+                    // TODO: 2017-08-24  获取试卷内容
+                    Toast.makeText(QuestionActivity.this, answer.getOwner() + answer.getPaperId(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(QuestionActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                 }

@@ -44,16 +44,19 @@ public class AnswerListActivity extends AppCompatActivity {
 
         Answer answerTest = new Answer();
         answerTest.setOwner("新建检查");
+        answerTest.setPaperId(paper.getId());
         answers.add(answerTest);
 
         // TODO: 2017-07-11 获取已检查清单
 
         answerTest = new Answer();
         answerTest.setOwner("TD-001");
+        answerTest.setPaperId(paper.getId());
         answers.add(answerTest);
 
         answerTest = new Answer();
         answerTest.setOwner("TD-002");
+        answerTest.setPaperId(paper.getId());
         answers.add(answerTest);
 
 
