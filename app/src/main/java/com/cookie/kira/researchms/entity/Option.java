@@ -8,7 +8,6 @@ public class Option {
     private int id;
     private int questionId;
     private int paperId;
-    private int type;
     private String text;
     private int value;
 
@@ -34,14 +33,6 @@ public class Option {
 
     public void setPaperId(int paperId) {
         this.paperId = paperId;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
     }
 
     public String getText() {

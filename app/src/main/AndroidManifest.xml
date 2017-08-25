@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".activity.AnswerListActivity" />
         <activity android:name=".activity.QuestionActivity" />
+        <activity android:name=".activity.ResultActivity" />
 
     </application>
 

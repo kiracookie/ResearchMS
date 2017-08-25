@@ -12,6 +12,15 @@ public class Question {
     private String text;
     private List<Option> options;
     private String comment;
+    private int type;  //1 单选
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public String getComment() {
         return comment;

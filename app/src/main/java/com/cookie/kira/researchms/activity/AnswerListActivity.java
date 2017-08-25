@@ -1,19 +1,15 @@
 package com.cookie.kira.researchms.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.cookie.kira.researchms.R;
 import com.cookie.kira.researchms.adapter.AnswerAdapter;
-import com.cookie.kira.researchms.adapter.PaperAdapter;
 import com.cookie.kira.researchms.entity.Answer;
 import com.cookie.kira.researchms.entity.Paper;
 
@@ -75,9 +71,12 @@ public class AnswerListActivity extends AppCompatActivity {
                             AnswerListActivity.this.startActivity(intent);
 
                         } else {
+
                             Toast.makeText(AnswerListActivity.this, "跳转至结果页 paperId owner" + ((Answer) view.getTag()).getOwner(), Toast.LENGTH_SHORT).show();
                             // TODO: 2017-07-11  取数 并跳转
-
+                            Intent intent = new Intent(AnswerListActivity.this, ResultActivity.class);
+                            intent.putExtra("answer", (Answer) view.getTag());
+                            AnswerListActivity.this.startActivity(intent);
                         }
                     }
                 }
