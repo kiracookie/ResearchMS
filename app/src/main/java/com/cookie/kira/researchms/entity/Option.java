@@ -1,10 +1,12 @@
 package com.cookie.kira.researchms.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by 11669 on 2017-06-29.
  */
 
-public class Option {
+public class Option implements Serializable {
     private int id;
     private int questionId;
     private int paperId;

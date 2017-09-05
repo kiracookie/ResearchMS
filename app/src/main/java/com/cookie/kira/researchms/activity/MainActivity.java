@@ -11,15 +11,16 @@ import android.widget.Toast;
 import com.cookie.kira.researchms.R;
 import com.cookie.kira.researchms.adapter.PaperAdapter;
 import com.cookie.kira.researchms.entity.Paper;
+import com.cookie.kira.researchms.util.PapersInfo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * 试卷列表
  */
 public class MainActivity extends AppCompatActivity {
-    private List<Paper> papers;
     private RecyclerView papaerListView;
     private PaperAdapter paperAdapter;
 
@@ -29,27 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        papers = new ArrayList<>();
-
-        Paper paperTest = new Paper();
-//        paperTest.setId(-1);
-//        paperTest.setName("新建调查");
-//        papers.add(paperTest);
-
-        // TODO: 2017-07-11 获取paper列表
-
-        paperTest = new Paper();
-        paperTest.setId(1);
-        paperTest.setName("2016测试");
-        papers.add(paperTest);
-
-        paperTest = new Paper();
-        paperTest.setId(2);
-        paperTest.setName("2017测试");
-        papers.add(paperTest);
+        final PapersInfo papersInfo = new PapersInfo();
 
 
-        paperAdapter = new PaperAdapter(papers,
+        paperAdapter = new PaperAdapter(new ArrayList<>(papersInfo.getPaperMap().values()),
 //                itemTv点击事件
                 new View.OnClickListener() {
                     @Override
